@@ -1,0 +1,14 @@
+Components Required:
+Arduino Uno
+Water Level Sensor
+Buzzer
+Connecting Wires
+
+
+Circuit Connections:
+Connect the signal pin of the water level sensor to A0 of the Arduino.
+Connect the VCC of the water level sensor to 5V of the Arduino.
+Connect the GND of the water level sensor to GND of the Arduino.
+
+Connect one pin of the buzzer to pin 13 of the Arduino.
+Connect the other pin of the buzzer to GND.
