@@ -1,0 +1,27 @@
+#define WATER_SENSOR A0  // Water level sensor connected to A0
+#define BUZZER 13        // Buzzer connected to digital pin 13
+
+int waterLevel = 0;      // Variable to store water level
+int threshold = 300;     // Set a threshold for low water level (adjust based on your sensor)
+
+void setup() {
+  pinMode(WATER_SENSOR, INPUT);
+  pinMode(BUZZER, OUTPUT);
+  Serial.begin(9600);    // Start serial communication for debugging
+}
+
+void loop() {
+  waterLevel = analogRead(WATER_SENSOR);  // Read the water level sensor value
+  Serial.print("Water Level: ");
+  Serial.println(waterLevel);
+
+  if (waterLevel < threshold) {
+    digitalWrite(BUZZER, HIGH); // Turn on the buzzer if water level is low
+    Serial.println("Water Level Low! Alert!");
+  } else {
+    digitalWrite(BUZZER, LOW);  // Turn off the buzzer
+    Serial.println("Water Level Sufficient.");
+  }
+
+  delay(1000); // Wait for 1 second before the next reading
+}
